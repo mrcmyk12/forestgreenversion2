@@ -1,38 +1,236 @@
-.App {
+:root {
+	--brand-forest-green: #1f3d0c;
+	--brand-forest-black: #050d01;
+	--brand-forest-grey: #b4bcb0;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container-box{
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container-box:hover .overlay{
+  opacity: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.jumbotron{
+  height: 100vh;
+  text-align: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  display: flexbox;
+}
+
+.hero-text{
+  font-size: 4rem;
+  font-weight: 800;
+  font-family: "Poppins", sans-serif;
+  position: absolute;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.h1{
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  size: 2rem;
+  letter-spacing: -2%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.h2{
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+  letter-spacing: -2%;
 }
+
+h3{
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: -2%;
+}
+
+.subtitle{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.body{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 140%;
+}
+
+.body-bold{
+  font-weight: bold;
+}
+
+.small-text{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  font-size: .9rem;
+}
+
+.brand-button-primary{
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 3%;
+  text-transform: uppercase;
+  transition: .75s ease;
+  height: 54px;
+  border: none;
+  border-radius: 8px;
+  background: var(--brand-forest-green);
+  color: white;
+}
+
+.brand-button-secondary{
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 3%;
+  text-transform: uppercase;
+  height: 54px;
+  border-radius: 8px;
+  color: var(--brand-forest-black);
+  background: white;
+}
+
+.brand-button-primary:hover:focus{
+  border: 1px solid #5fe20d;
+box-sizing: border-box;
+box-shadow: 0px 0px 0px 4px rgba(31, 61, 12, 0.35);
+border-radius: 8px;
+}
+
+.brand-button-primary:hover{
+  background: white;
+  border: 1px solid var(--brand-forest-green);
+  color: var(--brand-forest-green);
+}
+
+.button-text{
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 3%;
+  text-transform: uppercase;
+}
+
+.custom-navbar {
+	background: var(--brand-forest-black);
+	color: white;
+}
+
+.nav-text {
+	color: white;
+	font-family: "Poppins", sans-serif;
+	font-weight: bold;
+	font-size: 1rem;
+	letter-spacing: 3%;
+}
+
+.nav-text:hover{
+  text-decoration: underline;
+  color: white;
+  cursor: pointer;
+}
+
+.search {
+	height: 32px;
+  width: 68px;
+}
+
+.search:focus{
+/* Forest Green */
+border: 1px solid #5fe20d;
+box-sizing: border-box;
+box-shadow: 0px 0px 0px 4px rgba(31, 61, 12, 0.35);
+border-radius: 8px;
+}
+
+.search-button:hover{
+  color: var(--brand-forest-green);
+  border: 2px solid var(--brand-forest-green);
+  background: white;
+}
+
+.search-button {
+	height: 32px;
+  color: white;
+  background:var(--brand-forest-green);
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 3%;
+  text-transform: uppercase;
+
+}
+
+.thumbnail-image{
+  width: 90px;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border: 1px solid var(--brand-forest-black);
+  margin-right: 5px;
+  opacity: 0.7;
+  border-radius: 8px;
+  transition: 0.5s linear;
+}
+
+.variant-overlay{
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 20px;
+  text-align: center;
+}
+
+.container-box:hover .variant-overlay{
+  opacity: 1;
+  cursor: pointer;
+}
+
+.App {
+	text-align: center;
+}
+
+
+
+
+
+
