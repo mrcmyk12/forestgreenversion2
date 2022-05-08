@@ -3,6 +3,9 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Home from "./pages/Home";
+import Bamboo from "./pages/Bamboo";
+import Grocery from "./pages/Grocery";
+import ProductPage from "./pages/ProductPage";
 
 class App extends Component {
 	constructor() {
@@ -117,7 +120,13 @@ class App extends Component {
 				<Router>
 					<Navigation />
 					<Routes>
-						<Route path="/" element={<Home client={this.props.client} />} />
+						<Route
+							path="/"
+							element={<Home client={this.props.client} />}
+						/>
+						<Route path="/products/:handle" element={<ProductPage />} />
+            <Route path='/collections/bamboo-collection' element={<Bamboo client={this.props.client} />}/>
+            <Route path='/collections/grocery-collection' element={<Grocery client={this.props.client} />}/>
 					</Routes>
 				</Router>
 			</div>

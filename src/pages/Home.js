@@ -25,7 +25,8 @@ class Home extends Component {
 			heroImage:
 				"https://images.pexels.com/photos/338936/pexels-photo-338936.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
 			homeCollection: [],
-			products: []
+			products: [],
+            description:"Eco-Friendly Products for Conscious Consumers"
 		};
 	}
 
@@ -46,7 +47,7 @@ class Home extends Component {
 	render() {
 		return (
 			<div>
-				<Hero image={this.state.heroImage} />
+				<Hero title="Forest Green" image={this.state.heroImage} description={this.state.description} button='true'/>
 				<Row
 					style={{
 						background: "#050d01",
@@ -129,7 +130,7 @@ class Home extends Component {
 								<Col md="4">
 									<Link
 										style={{ textDecoration: "none", color: "black" }}
-										to="/">
+										to={`/products/${product.handle}`} key={product.id} state={{product: product}}>
 										<Card>
 											<CardImg
 												alt={product.title}
