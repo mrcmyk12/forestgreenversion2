@@ -117,7 +117,7 @@ class App extends Component {
 				<Router>
 					<Navigation />
 					<Routes>
-						<Route path="/" element={<Home homeCollection={this.state.homeCollection} />} />
+						<Route path="/" element={<Home client={this.props.client} />} />
 					</Routes>
 				</Router>
 			</div>
